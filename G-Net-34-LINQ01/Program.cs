@@ -1,4 +1,6 @@
-﻿namespace G_Net_34_LINQ01
+﻿using System.Numerics;
+
+namespace G_Net_34_LINQ01
 {
     internal class Program
     {
@@ -104,6 +106,29 @@
             {
                 Console.WriteLine($"Name: {product.ProductName}, Stock: {product.UnitsInStock}");
             }
+            #endregion
+            #region q10
+            //10. Using QUERY SYNTAX with a compound from clause, listall orders placed in 1997 or later showing CustomerID andOrderDate.
+            var orders1997OrLater =
+    from c in Customers
+    from o in c.Orders
+    where o.OrderDate.Year >= 1997
+    select new
+    {
+        c.CustomerID,
+        o.OrderDate
+    };
+
+            foreach (var item in orders1997OrLater)
+            {
+                Console.WriteLine($"CustomerID: {item.CustomerID}, OrderDate: {item.OrderDate:d}");
+            }
+            #endregion
+
+            #region q11
+            #endregion
+
+            #region q12
             #endregion
         }
     }
