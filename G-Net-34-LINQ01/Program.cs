@@ -1,4 +1,5 @@
-﻿using System.Numerics;
+﻿using System.Diagnostics.Metrics;
+using System.Numerics;
 
 namespace G_Net_34_LINQ01
 {
@@ -148,6 +149,22 @@ namespace G_Net_34_LINQ01
             foreach (var word in sort)
             {
                 Console.WriteLine(word);
+            }
+            #endregion
+
+            #region q13
+            //13. Create a list of all digits in the array whose secondletter is 'i' that is reversed from the order in theoriginal array.
+            string[] digits ={
+    "zero", "one", "two", "three", "four",
+    "five", "six", "seven", "eight", "nine"};
+
+            var result = digits
+                .Where(d => d.Length > 1 && d[1] == 'i')
+                .Reverse();
+
+            foreach (var digit in result)
+            {
+                Console.WriteLine(digit);
             }
             #endregion
         }
