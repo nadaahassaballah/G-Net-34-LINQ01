@@ -93,6 +93,17 @@
             {
                 Console.WriteLine($"Category: {product.Category}, Name: {product.ProductName}, Price: {product.UnitPrice}");
             }
+
+            #endregion
+
+            #region q9
+            //9. Get all products from the "Beverages" category, sorted byUnitsInStock descending. Print name and stock.
+
+            var beverages = ProductList.Where(p => p.category == "Beverages").OrderByDescending(p => p.unitsinstock);
+            foreach (var product in beverages)
+            {
+                Console.WriteLine($"Name: {product.ProductName}, Stock: {product.UnitsInStock}");
+            }
             #endregion
         }
     }
