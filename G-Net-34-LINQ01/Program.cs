@@ -38,6 +38,15 @@
             }
 
             #endregion
+            #region 4
+            //4. Get all products where UnitPrice is between 10 and 30
+            var pr30 = ProductList.Where(p => p.unitprice >= 10 && p.unitprice <= 30);
+            foreach (var product in pr30)
+            {
+                Console.WriteLine($"Name: {product.ProductName}, Price: {product.UnitPrice}");
+            }
+
+            #endregion
         }
     }
     } 
