@@ -56,6 +56,19 @@
                 Console.WriteLine($"Name: {product.ProductName}, Stock: {product.UnitsInStock}, Price: {product.UnitPrice}");
             }
             #endregion
+            #region q6
+            var prstatus = ProductList.Select(p => new
+            {
+                name = p.name,
+                price = p.price
+            ,
+                StockStatus = p.UnitsInStock > 0 ? "Available" : "Out of Stock"
+            });
+            foreach (var item in prstatus)
+            {
+                Console.WriteLine($"Name: {item.Name}, Price: {item.Price}, Status: {item.StockStatus}");
+            }
+            #endregion
         }
     }
     } 
