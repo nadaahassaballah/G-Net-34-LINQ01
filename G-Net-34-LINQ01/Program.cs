@@ -27,6 +27,17 @@
             }
 
             #endregion
+
+            #region 3
+
+            //3. Sort all products by UnitPrice (ascending). Print eachproduct's name and price.
+            var sortedproducts = ProductList.OrderBy(p => p.unitPrice);
+            foreach (var product in sortedproducts)
+            {
+                Console.WriteLine($"Name: {product.ProductName}, Price: {product.UnitPrice}");
+            }
+
+            #endregion
         }
     }
     } 
