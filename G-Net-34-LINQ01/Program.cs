@@ -47,6 +47,15 @@
             }
 
             #endregion
+            #region q5
+            //5. Get all products that are in stock (UnitsInStock > 0) anbelong to the "Condiments" category.
+
+            var condiments = ProductList.Where(p => p.unitsinstock > 0 && p.catagory == "condiments");
+            foreach (var product in condiments)
+            {
+                Console.WriteLine($"Name: {product.ProductName}, Stock: {product.UnitsInStock}, Price: {product.UnitPrice}");
+            }
+            #endregion
         }
     }
     } 
