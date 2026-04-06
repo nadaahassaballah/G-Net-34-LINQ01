@@ -66,8 +66,22 @@
             });
             foreach (var item in prstatus)
             {
-                Console.WriteLine($"Name: {item.Name}, Price: {item.Price}, Status: {item.StockStatus}");
+                Console.WriteLine($"Name: {item.name}, Price: {item.price}, Status: {item.StockStatus}");
             }
+            #endregion
+
+            #region q7
+            //7. Print each product's name along with its position (1-based)in the list. Expected format: 1.Chai, 2.Chang, etc.
+            var index = ProductList.Select((p, index) => new
+            {
+                position = index + 1,
+                name =p.name
+            });
+            foreach (var item in index)
+            {
+                Console.WriteLine($"{item.position}. {item.name}");
+            }
+
             #endregion
         }
     }
