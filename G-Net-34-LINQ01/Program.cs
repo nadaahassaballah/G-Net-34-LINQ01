@@ -10,11 +10,23 @@
 
             // 1.Get all products from the "Seafood" category.Print each product's name and price.
             var seafoodproducts = ProductList.Where(p => p.category == "seafood");
-            foreach(var product in seafoodproducts)
+            foreach (var product in seafoodproducts)
             {
                 Console.WriteLine($"Name: {product.ProductName}, Price: {product.UnitPrice}");
 
             }
             #endregion
+
+            #region 2
+            //2. Get a list of only the product names from ProductList. Printeach name.
+
+            var productnames = ProductList.Select(ProductList => ProductList.productName);
+            foreach (var name in productnames)
+            {
+                Console.WriteLine(name);
+            }
+
+            #endregion
         }
+    }
     } 
