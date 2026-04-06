@@ -126,6 +126,18 @@ namespace G_Net_34_LINQ01
             #endregion
 
             #region q11
+            //11. Show position number alongside ProductName
+            var productPositions = ProductList
+    .Select((p, index) => new
+    {
+        Position = index + 1,
+        name = p.ProductName
+    });
+
+            foreach (var item in productPositions)
+            {
+                Console.WriteLine($"{item.Position} - {item.name}");
+            }
             #endregion
 
             #region q12
